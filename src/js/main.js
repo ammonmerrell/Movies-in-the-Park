@@ -17,7 +17,6 @@ function cartItemTemplate(item) {
     const newItem = `<li class="cart-card divider">
   
     <h2 class="card__name">${item.Name}</h2>
-  </a>
   <button id="view" dataset="${item.Name}">view</button>
 </li>`;
     return newItem;
@@ -46,6 +45,6 @@ function removeFromCart() {
 }
 
 
-addProductToList(ev)
+// addProductToList(ev)
 renderCartContents()
 removeFromCart()
