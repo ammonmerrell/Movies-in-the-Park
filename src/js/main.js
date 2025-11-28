@@ -18,6 +18,7 @@ function cartItemTemplate(item) {
   <a href="#">
     <h2 class="card__name">${item.Name}</h2>
   </a>
+  <button id="view">view</button>
 </li>`;
     return newItem;
 }
