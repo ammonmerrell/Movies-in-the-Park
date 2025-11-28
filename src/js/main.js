@@ -15,10 +15,10 @@ function renderCartContents() {
 
 function cartItemTemplate(item) {
     const newItem = `<li class="cart-card divider">
-  <a href="#">
+  
     <h2 class="card__name">${item.Name}</h2>
   </a>
-  <button id="view">view</button>
+  <button id="view" dataset="${item.Name}">view</button>
 </li>`;
     return newItem;
 }
@@ -29,5 +29,23 @@ let ev = {
     "MovieList": ["The+Peanuts+movie", "Up", "luca", "Ice+Age"]
 }
 
+
+function removeFromCart() {
+    const buttons = document.querySelectorAll("#view");
+    buttons.forEach((button) =>
+        button.addEventListener("click", function (event) {
+            const itemId = event.target.getAttribute("dataset");
+            let cartItems = getLocalStorage("so-cart") || [];
+            cartItems.splice(itemId, 1);
+            localStorage.setItem("so-cart", JSON.stringify(cartItems));
+            console.log(itemId)
+            renderCartContents();
+            
+        }),
+    );
+}
+
+
 addProductToList(ev)
 renderCartContents()
+removeFromCart()
