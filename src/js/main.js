@@ -1,4 +1,4 @@
-import { getLocalStorage, setLocalStorage } from "./utils.mjs";
+import { getLocalStorage, setLocalStorage } from "./localStorage.mjs";
 
 const a = document.querySelector(".list");
 a.innerHTML = ``;
